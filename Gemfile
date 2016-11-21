@@ -48,5 +48,4 @@ end
 
 #Halm
 gem 'haml-rails'
-
 gem 'erb2haml'
