@@ -49,3 +49,6 @@ end
 #Halm
 gem 'haml-rails'
 gem 'erb2haml'
+
+#font
+gem 'font-awesome-rails'

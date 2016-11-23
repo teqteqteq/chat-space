@@ -1,0 +1,71 @@
+!!!
+%html
+  %head
+    %title ChatSpace
+    %link{:href => "/assets/application.scss", :media => "all", :rel => "stylesheet"}/
+    %link{:href => "/assets/chat.scss", :rel => "stylesheet"}/
+    %body
+    %p.layout-notice チャットグループが作成されました。
+    .layout-notification
+      .chat
+        .chat-side
+          .chat-user.clearfix
+            %h5 teqteqteq
+            .chat-user__actions
+              .chat-user__action{:href => "/chat_groups/new"}
+                %i.fa.fa-pencil-square-o
+              .chat-user__action{:href => "/users/edit"}
+                %i.fa.fa-cog
+          %ul.chat-groups
+            %li.chat-group
+              .chat-group__link{:href => "/chat_groups/2602/messages"}
+                %p.chat-group__name かたやきそば
+                %p.chat-group__message
+            %li.chat-group
+              .chat-group__link{:href => "/chat_groups/2742/messages"}
+                %p.chat-group__name てすとです
+                %p.chat-group__message
+                  test
+            %li.chat-group
+              .chat-group__link{:href => "/chat_groups/2852/messages"}
+                %p.chat-group__name aaaaaaaaaa
+                %p.chat-group__message
+                  まだメッセージはありません。
+        .chat-main
+          .chat-header.clearfix
+            .chat-header--left
+              %h2 aaaaaaaaaa
+              %p.chat-header__users
+                Members:
+                %span.chat-header__user teqteqteq
+            .chat-header--right
+              .chat-header__edit-btn{:href => "/chat_groups/2852/edit"} Edit
+          .chat-body
+            %ul.chat-messages
+              %li.chat-message
+                .chat-message__header.clearfix
+                  %p.chat-message__name
+                    teqteqteq
+                  %p.chat-message__time
+                    2016/11/19 03:44:57
+                %p.chat-message__body
+                  ソイソース
+              %li.chat-message
+                .chat-message__header.clearfix
+                  %p.chat-message__name
+                    teqteqteq
+                  %p.chat-message__time
+                    2016/11/19 03:47:03
+                %p.chat-message__body
+                  やっぴー
+
+          .chat-footer
+            %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/chat_groups/2852/messages", :enctype => "multipart/form-data", :method => "post"}
+              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+              %input{:name => "authenticity_token", :type => "hidden", :value => "vlqnokMvh4Pm9SWBz40SHqMwvskeF//oOX+PXeUGRnCyLe79NttZ0Hp0XidmKIkH94Ggggl7kU7NXUErRKFhrw=="}/
+              .chat-footer__body
+                %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+                %label.chat-footer__file
+                  %input#message_image{:name => "message[image]", :type => "file"}/
+                  %i.fa.fa-image
+              %input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
