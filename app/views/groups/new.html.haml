@@ -21,10 +21,10 @@
       .chat-group-form__field--right
         #chat-group-users
           #chat-group-user-22.chat-group-user.clearfix
-            = f.text_field :name, type: "hidden", value: "22"
+          
             = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
               = b.label { b.check_box + b.text }
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        = f.text_field :name , class: "chat-group-form__action-btn", type: "submit"
+        = f.submit :name , class: "chat-group-form__action-btn", type: "submit"
