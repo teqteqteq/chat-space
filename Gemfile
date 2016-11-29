@@ -53,3 +53,4 @@ gem 'erb2haml'
 gem 'devise'
 #font
 gem 'font-awesome-rails'
+gem 'pry-rails'

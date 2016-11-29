@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    binding_pry
       params.require(:user).permit(:name, {:group_ids => []})
     end
 
