@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-      params.require(:user).permit(:name, {:group_ids => []})
+      params.require(:user).permit(:name, {group_ids: []})
     end
 
 end

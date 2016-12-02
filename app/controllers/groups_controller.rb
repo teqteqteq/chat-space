@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path
     else
-      redirect_to :action => "new"
+      redirect_to action: "new"
     end
   end
 
@@ -26,7 +26,8 @@ class GroupsController < ApplicationController
 
   private
   def create_params
-   params.require(:group).permit(:name, {:user_ids => []})
+   params.require(:group).permit(:name, {user_ids: []})
+   binding.pry
   end
 
   def set_groups

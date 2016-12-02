@@ -2,8 +2,8 @@
 %html
   %head
     %title ChatSpace
-    %link{:href => "/assets/application.scss", :media => "all", :rel => "stylesheet"}/
-    %link{:href => "/assets/chat.scss", :rel => "stylesheet"}/
+    %link{href: "/assets/application.scss", media: "all", rel: "stylesheet"}/
+    %link{href: "/assets/chat.scss", rel: "stylesheet"}/
     %body
     %p.layout-notice チャットグループが作成されました。
     .layout-notification
@@ -12,22 +12,22 @@
           .chat-user.clearfix
             %h5 teqteqteq
             .chat-user__actions
-              .chat-user__action{:href => "/chat_groups/new"}
+              .chat-user__action{href: "/chat_groups/new"}
                 %i.fa.fa-pencil-square-o
-              .chat-user__action{:href => "/users/edit"}
+              .chat-user__action{href: "/users/edit"}
                 %i.fa.fa-cog
           %ul.chat-groups
             %li.chat-group
-              .chat-group__link{:href => "/chat_groups/2602/messages"}
+              .chat-group__link{href: "/chat_groups/2602/messages"}
                 %p.chat-group__name かたやきそば
                 %p.chat-group__message
             %li.chat-group
-              .chat-group__link{:href => "/chat_groups/2742/messages"}
+              .chat-group__link{href: "/chat_groups/2742/messages"}
                 %p.chat-group__name てすとです
                 %p.chat-group__message
                   test
             %li.chat-group
-              .chat-group__link{:href => "/chat_groups/2852/messages"}
+              .chat-group__link{href: "/chat_groups/2852/messages"}
                 %p.chat-group__name aaaaaaaaaa
                 %p.chat-group__message
                   まだメッセージはありません。
@@ -39,7 +39,7 @@
                 Members:
                 %span.chat-header__user teqteqteq
             .chat-header--right
-              .chat-header__edit-btn{:href => "/chat_groups/2852/edit"} Edit
+              .chat-header__edit-btn{href: "/chat_groups/2852/edit"} Edit
           .chat-body
             %ul.chat-messages
               %li.chat-message
@@ -60,12 +60,12 @@
                   やっぴー
 
           .chat-footer
-            %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/chat_groups/2852/messages", :enctype => "multipart/form-data", :method => "post"}
-              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-              %input{:name => "authenticity_token", :type => "hidden", :value => "vlqnokMvh4Pm9SWBz40SHqMwvskeF//oOX+PXeUGRnCyLe79NttZ0Hp0XidmKIkH94Ggggl7kU7NXUErRKFhrw=="}/
+            %form#new_message.new_message{"accept-charset" => "UTF-8", action: "/chat_groups/2852/messages", enctype: "multipart/form-data", method: "post"}
+              %input{name: "utf8", type: "hidden", value: "✓"}/
+              %input{name: "authenticity_token", type: "hidden", value: "vlqnokMvh4Pm9SWBz40SHqMwvskeF//oOX+PXeUGRnCyLe79NttZ0Hp0XidmKIkH94Ggggl7kU7NXUErRKFhrw=="}/
               .chat-footer__body
-                %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+                %textarea#message_body{name: "message[body]", placeholder: "type a message", row: "1"}
                 %label.chat-footer__file
-                  %input#message_image{:name => "message[image]", :type => "file"}/
+                  %input#message_image{name: "message[image]", type: "file"}/
                   %i.fa.fa-image
-              %input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+              %input{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
