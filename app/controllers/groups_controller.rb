@@ -8,8 +8,11 @@ class GroupsController < ApplicationController
   end
 
   def update
-    @group.update(create_params)
-    redirect_to root_path
+      if @group.update(create_params)
+        redirect_to root_path
+      else
+        redirect_to edit_group_path
+      end
   end
 
   def create
@@ -17,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path
     else
-      redirect_to action: "new"
+      redirect_to new_group_path
     end
   end
 
@@ -27,7 +30,6 @@ class GroupsController < ApplicationController
   private
   def create_params
    params.require(:group).permit(:name, {user_ids: []})
-   binding.pry
   end
 
   def set_groups
