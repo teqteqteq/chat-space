@@ -1,17 +1,15 @@
 class GroupsController < ApplicationController
+  before_action :set_groups
   def new
     @group = Group.new
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     @group.update(create_params)
     redirect_to root_path
-
   end
 
   def create
@@ -28,4 +26,7 @@ private
  def create_params
    params.require(:group).permit(:name, {:user_ids => []})
  end
+
+ def set_groups
+   @group = Group.find(params[:id])
 end
