@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
       if @group.update(create_params)
         redirect_to root_path
       else
-        redirect_to edit_group_path
+        render action: :edit
       end
   end
 
@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path
     else
-      redirect_to new_group_path
+      render action: :new
     end
   end
 
