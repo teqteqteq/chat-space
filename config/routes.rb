@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'chats#index'
   resources :chats
   resources :users
-  resources :groups
+  resources :groups, :only => [:create, :new ,:update, :edit, :show]
 
 end
